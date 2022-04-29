@@ -16,8 +16,18 @@ class homeController extends Controller {
 
     public function index() {
         $data = array();
-        
+        $p = new Products();
+
+        $data['list'] = $p->getProducts();
         $this->loadTemplate('home', $data);
+    }
+
+    public function add() {
+        $data = array();
+
+        
+        $this->loadTemplate('add', $data);
+
     }
 
 }
