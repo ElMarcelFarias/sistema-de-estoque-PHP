@@ -35,11 +35,21 @@ class homeController extends Controller {
 
             $p->addProduct($cod, $name, $price, $quantity, $min_quantity);
             header("Location: ".BASE_URL);
+            exit;
         }
-
 
         $this->loadTemplate('add', $data);
 
+    }
+
+    public function edit($id) {
+        $data = array();
+        $p = new Products();
+
+        
+
+        $this->loadTemplate('edit', $data);
+        
     }
 
 }

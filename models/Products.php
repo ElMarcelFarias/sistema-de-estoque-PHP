@@ -25,4 +25,19 @@ class Products extends Model {
         $sql->bindValue(":min_quantity", $min_quantity);
         $sql->execute();
     }
+
+    public function getProduct($id) {
+        $array = array();
+        $sql = "SELECT * FROM products WHERE id = :id";
+        $sql = $this->db->prepare($sql);
+        $sql->bindValue(":id", $id);
+        $sql->execute();
+
+        if($sql->rowCount > 0 ){
+
+            $array = $sql->fetch();
+
+        }
+        return $array;
+    }
 }
