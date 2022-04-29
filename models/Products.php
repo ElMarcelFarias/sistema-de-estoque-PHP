@@ -1,11 +1,21 @@
 <?php
 class Products extends Model {
 
-    public function getProducts() {
+    public function getProducts($s='') {
         $array = array();
         
-        $sql = "SELECT * FROM products";
-        $sql = $this->db->query($sql);
+        if(!empty($s)) {
+            $sql = "SELECT * FROM products WHERE cod = :cod OR name LIKE :name";
+            $sql = $this->db->prepare($sql);
+            $sql->bindValue(":cod", $s);
+            $sql->bindValue(":name", '%'.$s.'%');
+            $sql->execute();
+        } else {
+            $sql = "SELECT * FROM products";
+            $sql = $this->db->query($sql);
+        }
+
+        
 
         if($sql->rowCount() > 0) {
             $array = $sql->fetchAll();

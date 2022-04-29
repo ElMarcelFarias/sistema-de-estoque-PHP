@@ -17,8 +17,13 @@ class homeController extends Controller {
     public function index() {
         $data = array();
         $p = new Products();
+        $s = '';
 
-        $data['list'] = $p->getProducts();
+        if(!empty($_GET['busca'])) {
+            $s = $_GET['busca'];
+        }
+
+        $data['list'] = $p->getProducts($s);
         $this->loadTemplate('home', $data);
     }
 
@@ -54,6 +59,9 @@ class homeController extends Controller {
             $min_quantity = $_POST['min_quantity'];
 
             $p->editProduct($cod, $name, $price, $quantity, $min_quantity, $id);
+
+            header("Location: ".BASE_URL);
+            exit;
         }
 
         $data['info'] = $p->getProduct($id);
