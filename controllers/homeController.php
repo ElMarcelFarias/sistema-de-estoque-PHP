@@ -46,10 +46,19 @@ class homeController extends Controller {
         $data = array();
         $p = new Products();
 
-        
+        if(!empty($_POST['cod'])) {
+            $cod = $_POST['cod'];
+            $name = $_POST['name'];
+            $price = $_POST['price'];
+            $quantity = $_POST['quantity'];
+            $min_quantity = $_POST['min_quantity'];
 
+            $p->editProduct($cod, $name, $price, $quantity, $min_quantity, $id);
+        }
+
+        $data['info'] = $p->getProduct($id);
         $this->loadTemplate('edit', $data);
-        
     }
+    
 
 }

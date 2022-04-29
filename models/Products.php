@@ -14,16 +14,43 @@ class Products extends Model {
         return $array;
     }
 
+    public function verifyProduct($cod) {
+        //Local onde conseguimos fazer uma verificação
+        //em um local só, verificando se existe codigo de barras.
+        return true;
+    }
+
     public function addProduct($cod, $name, $price, $quantity, $min_quantity) {
         
-        $sql = "INSERT INTO products (cod, name, price, quantity, min_quantity) VALUES (:cod, :name, :price, :quantity, :min_quantity)";
-        $sql = $this->db->prepare($sql);
-        $sql->bindValue(":cod", $cod);
-        $sql->bindValue(":name", $name);
-        $sql->bindValue(":price", $price);
-        $sql->bindValue(":quantity", $quantity);
-        $sql->bindValue(":min_quantity", $min_quantity);
-        $sql->execute();
+        if($this->verifyProduct($cod)) {
+            $sql = "INSERT INTO products (cod, name, price, quantity, min_quantity) VALUES (:cod, :name, :price, :quantity, :min_quantity)";
+            $sql = $this->db->prepare($sql);
+            $sql->bindValue(":cod", $cod);
+            $sql->bindValue(":name", $name);
+            $sql->bindValue(":price", $price);
+            $sql->bindValue(":quantity", $quantity);
+            $sql->bindValue(":min_quantity", $min_quantity);
+            $sql->execute();
+        } else {
+            return false;
+        }
+    }
+
+    public function editProduct($cod, $name, $price, $quantity, $min_quantity, $id) {
+
+        if($this->verifyProduct($cod)) {
+            $sql = "UPDATE products SET cod = :cod, name = :name, price = :price, quantity = :quantity, min_quantity = :min_quantity WHERE id = :id";
+            $sql = $this->db->prepare($sql);
+            $sql->bindValue(":cod", $cod);
+            $sql->bindValue(":name", $name);
+            $sql->bindValue(":price", $price);
+            $sql->bindValue(":quantity", $quantity);
+            $sql->bindValue(":min_quantity", $min_quantity);
+            $sql->bindValue(":id", $id);
+            $sql->execute();
+        } else {
+            return false;
+        }
     }
 
     public function getProduct($id) {
@@ -33,7 +60,7 @@ class Products extends Model {
         $sql->bindValue(":id", $id);
         $sql->execute();
 
-        if($sql->rowCount > 0 ){
+        if($sql->rowCount() > 0) {
 
             $array = $sql->fetch();
 
