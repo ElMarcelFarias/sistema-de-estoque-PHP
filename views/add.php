@@ -1,6 +1,7 @@
+
 <h1>Adicionar Produto</h1>
 
-<form method="POST">
+<form method="POST" class="form">
     Código de Barras:<br/>
     <input type="text" name="cod" required><br/><br/>
     Nome do Produto:<br/>

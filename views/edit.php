@@ -1,6 +1,6 @@
 <h1>Editar Produto</h1>
 
-<form method="POST">
+<form method="POST" class="form">
     Código de Barras:<br/>
     <input type="text" name="cod" value="<?php echo $info['cod']; ?>" required><br/><br/>
     Nome do Produto:<br/>
@@ -12,6 +12,5 @@
     Qtd. Mínima:<br/>
     <input type="text" name="min_quantity" value="<?php echo $info['min_quantity']; ?>" required><br/><br/>
 
-    <input type="submit" value="Salvar alterações">
+    <input type="submit" value="Salvar alterações" class="buttonEdit">
 </form>
-<a href="<?php echo BASE_URL;?>">Voltar</a>

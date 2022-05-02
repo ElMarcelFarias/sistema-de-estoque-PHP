@@ -19,6 +19,12 @@ nav ul li {
     margin-bottom: 20px;
     height: 40px;
 }
+
+.header nav {
+    max-width: 1000px;
+    margin: auto;
+}
+
 .header li {
     display: inline-block;
     height: 40px;
@@ -34,7 +40,7 @@ nav ul li {
 }
 
 .header li a:hover {
-    transition: .6s;
+    transition: .4s;
     background-color: #EEE;
 }
 
@@ -56,8 +62,37 @@ table a:hover {
     text-decoration: underline;
 }
 
+table tr:hover td{
+    background-color: #EEE;
+    transition: .4s;
+}
 
 #busca {
     outline: 0;
     border: 0;
+}
+
+.form input[type=text],
+.form select, 
+.form textarea {
+    width: 100%;
+    height: 30px;
+    font-size: 15px;
+    padding-left: 5px;
+    border: 1px solid #DDD;
+    outline: 0;
+}
+
+.buttonEdit {
+    background-color: #CCC;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    border: 1px solid #000;
+}
+
+.buttonEdit:hover {
+    background-color: #FFF;
+    transition: .6s;
 }
