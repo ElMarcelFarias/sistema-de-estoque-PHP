@@ -5,6 +5,7 @@
 		<title>Sistema de Estoque</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/style.css">
+		<script src="<?php echo BASE_URL;?>assets/js/jquery.min.js"></script>
 	</head>
 	<body>
 		<?php if(isset($viewData['menu'])): ?>
@@ -23,5 +24,9 @@
 			$this->loadViewInTemplate($viewName, $viewData);
 			?>
 		</div>
+		
+	<!--máscara do jquery-->
+	<script src="<?php echo BASE_URL;?>assets/js/jquery.mask.js"></script>
+	<script src="<?php echo BASE_URL;?>assets/js/script.js"></script>
 	</body>
 </html>
