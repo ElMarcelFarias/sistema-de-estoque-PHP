@@ -96,3 +96,12 @@ table tr:hover td{
     background-color: #FFF;
     transition: .6s;
 }
+
+.warning {
+    border: 1px solid #FF0000;
+    background-color: #FF5555;
+    padding: 10px;
+    font-size: 14px;
+    color: #000;
+    margin-bottom: 10px;
+}
