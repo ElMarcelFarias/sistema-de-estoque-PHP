@@ -17,10 +17,16 @@ input[type=password] {
     height: 30px;
 }
 
-input[type=submit] {
+.buttonLogin {
     background-color: #CCC;
     padding: 5px 10px;
     border-radius: 10px;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: bold;
+    cursor: pointer;
+}
+
+.buttonLogin:hover {
+    background-color: #FFF;
+    transition: .6s;
 }

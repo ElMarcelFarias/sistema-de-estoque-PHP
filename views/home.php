@@ -1,6 +1,4 @@
-<a href="<?php echo BASE_URL; ?>home/add">Adicionar produto</a><br/><br/>
 
-<a href="<?php echo BASE_URL; ?>login/sair">Sair</a></br></br>
 <fieldset>
     <form POST="GET">
         <input type="text" id="busca" name="busca" value="<?php echo (!empty($_GET['busca']))?$_GET['busca']:'';?>" placeholder="Digite o código de Barras ou nome do produto" style="width:100%;height:50px;font-size:18px">
@@ -9,7 +7,7 @@
 <br/>
 <br/>
 
-<table border="1" width="100%">
+<table border="0" width="100%">
     <tr>
         <th>Cód. Barra</th>
         <th>Nome</th>

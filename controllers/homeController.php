@@ -15,7 +15,12 @@ class homeController extends Controller {
     }
 
     public function index() {
-        $data = array();
+        $data = array(
+            'menu' => array(
+                BASE_URL.'home/add' => 'Adicionar Produtos',
+                BASE_URL.'login/sair' => 'Sair'
+            )
+        );
         $p = new Products();
         $s = '';
 

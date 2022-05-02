@@ -16,7 +16,7 @@
 
             Sua senha:<br/>
             <input type="password" name="password"><br/><br/>
-            <input type="submit" value="Entrar">
+            <input type="submit" value="Entrar" class="buttonLogin">
         </form> 
     </div>
     <?php if(!empty($msg)): ?>
