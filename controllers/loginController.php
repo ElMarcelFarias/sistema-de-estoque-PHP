@@ -19,7 +19,7 @@ class loginController extends Controller {
                 header("Location: ".BASE_URL);
                 exit;
             } else {
-                $data['msg'] = 'Número e/ou senha incorretos!';
+                $data['msgErrorLogin'] = true;
             }
         }
 

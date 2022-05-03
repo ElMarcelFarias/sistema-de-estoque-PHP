@@ -1,32 +1,9 @@
-body {
-    background-color: #DDD;
-}
-
-.loginarea{
-    background-color: #FFF;
-    padding: 20px;
-    border-radius: 10px;
-    width: 300px;
-    margin: auto;
-    margin-top: 300px;
-}
-input[type=text], 
-input[type=password] {
-    width: 100%;
-    font-size: 13px;
-    height: 30px;
-}
-
-.buttonLogin {
-    background-color: #CCC;
-    padding: 5px 10px;
-    border-radius: 10px;
-    border: 1px solid #000;
+.warning {
+    border: 1px solid #FF0000;
+    background-color: #FF5555;
+    padding: 10px;
     font-size: 14px;
-    cursor: pointer;
+    color: #000;
+    margin-bottom: 10px;
 }
 
-.buttonLogin:hover {
-    background-color: #FFF;
-    transition: .6s;
-}
