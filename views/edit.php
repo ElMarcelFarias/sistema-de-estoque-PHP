@@ -6,6 +6,7 @@
 </div>
 <?php endif;?>
 
+
 <form method="POST" class="form">
     Código de Barras:<br/>
     <input type="text" name="cod" value="<?php echo $info['cod']; ?>" required><br/><br/>

@@ -1,6 +1,6 @@
 <?php
 class FiltersHelper {
-          
+     
     public function filter_post_money($t) {
         $price = filter_input(INPUT_POST, $t);
         $price = str_replace('.','',$price);
@@ -9,6 +9,7 @@ class FiltersHelper {
 
         return $price; 
     }
+    
            
 }
 
